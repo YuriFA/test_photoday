@@ -1,7 +1,8 @@
 @import (css) 'reset.css';
 
-@white: #fff;
-@black: #000;
+@screen-sm: 320px;
+@screen-md: 480px;
+@screen-lg: 768px;
 
 * {
   padding: 0;
@@ -10,29 +11,38 @@
 }
 
 body {
-  background-color: @white;
+  background-color: #fff;
   font-family: 'Noto Sans', sans-serif;
 }
 
-.page {
-  min-width: 320px;
+.header,
+.footer {
+  min-width: @screen-sm;
   max-width: 100%;
   padding-left: 5px;
   padding-right: 5px;
-  @media (min-width: 480px) {
+
+  @media only screen and (min-width: @screen-md) {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  @media (min-width: 768px) {
-    max-width: 768px;
+
+  @media only screen and (min-width: @screen-lg) {
+    max-width: @screen-lg;
     margin: 0 auto;
   }
 }
 
 .header {
-  position: relative;
 }
 
 .header-title-wrapper {
+  position: relative;
   height: 66px;
+
+  @media only screen and (min-width: @screen-md) {
+    height: 107px;
+  }
 }
 
 .header-title {
@@ -42,6 +52,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   text-transform: uppercase;
+
   &:after {
     content: '';
     position: absolute;
@@ -50,20 +61,38 @@ body {
     left: 191px;
     display: block;
     height: 2px;
-    background-color: @black;
+    background-color: #000;
+
+    @media only screen and (min-width: @screen-md) {
+      top: 75px;
+      left: 283px;
+    }
+  }
+
+  @media only screen and (min-width: @screen-md) {
+    padding-top: 39px;
+    font-size: 40px;
+    line-height: 40px;
   }
 }
 
 .header-photo {
   position: relative;
+
   &__date {
     position: absolute;
     top: 6px;
     left: 6px;
-    width: 81px;
-    height: 54px;
+    width: 80px;
+    height: 53px;
     background: rgba(255,255,255, 0.8);
+    
+    @media only screen and (min-width: @screen-md) {
+      top: 10px;
+      left: 10px;
+    }
   }
+
   &__image {
     &>img {
       width: 100%;
@@ -78,6 +107,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   &>span {
     font-family: 'Noto Serif', serif;
   }
@@ -97,22 +127,47 @@ body {
 
 .page-content {
   padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+
+  @media only screen and (min-width: @screen-md) {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .photos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: space-between;
-  margin-left: -3px;
-  margin-right: -3px;
+  position: relative;
+  font-size: 0;
+  // display: flex;
+  // flex-wrap: wrap;
+  // // justify-content: space-between;
+  // margin-left: -3px;
+  // margin-right: -3px;
+
   &:after {
     content: '';
     flex: auto;
   }
+
   &__item {
+    display: inline-block;
+    vertical-align: top;
     padding-left: 3px;
     padding-right: 3px;
     padding-bottom: 6px;
+
+    @media only screen and (min-width: @screen-md) {
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 10px;
+    }
+  }
+  
+  @media only screen and (min-width: @screen-md) {
+    // margin-left: -5px;
+    // margin-right: -5px;
   }
 }
 
@@ -120,6 +175,11 @@ body {
 .date-card {
   width: 73px;
   height: 48px;
+
+  @media only screen and (min-width: @screen-md) {
+    width: 80px;
+    height: 53px;
+  }
 }
 
 .photo-card > img {
@@ -128,6 +188,7 @@ body {
 
 .date-card {
   position: relative;
+
   &:after {
     content: '';
     position: absolute;
@@ -136,7 +197,7 @@ body {
     display: block;
     width: 0;
     height: 0;
-    border-left: 3px solid @black;
+    border-left: 3px solid #000;
     border-top: 2.5px solid transparent;
     border-bottom: 2.5px solid transparent;
     border-right: 0;
@@ -144,13 +205,13 @@ body {
 }
 
 .ads {
-  width: 100%;
   height: 80px;
   padding-left: 118px;
   margin: 3px 3px 11px 3px;
   background-color: #fbf6e8;
   background-image: url('./../images/ads.png');
   background-repeat: no-repeat;
+
   &__description {
     padding-top: 7px;
     letter-spacing: 0.55px;
@@ -158,6 +219,7 @@ body {
     font-weight: 700;
     color: #bebebe;
   }
+
   &__title {
     padding-top: 5px;
     line-height: 16px;
@@ -165,10 +227,24 @@ body {
     font-size: 13px;
     font-weight: 700;
   }
+
   &__content {
     font-size: 12px;
     line-height: 16px;
     padding-top: 3px;
+  }
+  
+  @media only screen and (min-width: @screen-md) {
+    display: none;
+  }
+}
+
+.additional-content {
+  display: none;
+  
+  @media only screen and (min-width: @screen-md) {
+    display: block;
+    position: absolute;
   }
 }
 
@@ -192,11 +268,13 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  color: @black;
+  color: #000;
   text-decoration: none;
+
   &.active {
     background-color: #e6e6e6;
   }
+
   &.next {
     width: auto;
     margin-left: 21px;
