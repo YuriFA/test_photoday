@@ -4,6 +4,38 @@
 @screen-md: 480px;
 @screen-lg: 768px;
 
+@baseFontSize: 16px;
+
+.CSSLock (@property, @from, @to, @fromWidth: @screen-sm, @toWidth: @screen-md) {
+  // y = ax + b
+	// First declare the "from" value, the mobile-first default value
+	@{property}: @from;
+
+	// Some calculations are performed...
+	@a: (unit(@from - @to) * unit(@baseFontSize)) / unit(@fromWidth - @toWidth);
+  // @b: @to - @slope * @toWidth;
+  @_from: unit(@from);
+  @_fromWidth: unit(@fromWidth);
+  @_baseFontSize: unit(@baseFontSize);
+
+  @b: ~"@{_from} * @{_baseFontSize} * 1px - @{a} * @{_fromWidth} * 1px";
+
+	// Starting with this width, a calc() function scales the value up or down toward the "to" value
+	@media (min-width: @fromWidth) {
+    // @{property}: calc(~"@{base} + "100vw * @slope);
+    @{property}: calc(~"calc(@{a} * 100vw + @{b})");
+	}
+
+	// Upper end end of the "lock"
+	@media (min-width: @toWidth) {
+		@{property}: @to;
+	}
+}
+
+html {
+  font-size: @baseFontSize;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -55,35 +87,38 @@ body {
 .header-title {
   padding-top: 23px;
   line-height: 26px;
-  font-size: 26px;
+  // font-size: 26px;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   text-transform: uppercase;
+  .CSSLock(font-size, 1.625rem, 2.5rem, @screen-sm, @screen-md);
 
   &:after {
     content: '';
     position: absolute;
-    top: 44px;
+    // top: 44px;
     right: 0;
-    left: 191px;
+    // left: 191px;
     display: block;
+    .CSSLock(bottom, 1.25rem, 1.875rem, @screen-sm, @screen-md);
+    .CSSLock(width, 7.4375rem, 9.8125rem, @screen-sm, @screen-md);
     height: 2px;
     background-color: #000;
 
-    @media only screen and (min-width: @screen-md) {
-      top: 75px;
-      left: 283px;
-    }
+    // @media only screen and (min-width: @screen-md) {
+    //   top: 75px;
+    //   left: 283px;
+    // }
     
-    @media only screen and (min-width: @screen-lg) {
-      top: 72px;
-      left: 280px;
-    }
+    // @media only screen and (min-width: @screen-lg) {
+    //   top: 72px;
+    //   left: 280px;
+    // }
   }
 
   @media only screen and (min-width: @screen-md) {
     padding-top: 39px;
-    font-size: 40px;
+    // font-size: 40px;
     line-height: 40px;
   }
   
