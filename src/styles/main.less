@@ -1,5 +1,12 @@
 @import (css) 'reset.css';
 
+@grey-lighter: #e6e6e6;
+@grey-light: #bebebe;
+@grey: #acacac;
+
+@outer-bg: #f6f5f3;
+@ads-bg: #fbf6e8;
+
 @screen-sm: 320px;
 @screen-md: 480px;
 @screen-lg: 768px;
@@ -47,7 +54,7 @@ a {
 }
 
 body {
-  background-color: #f6f5f3;
+  background-color: @outer-bg;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -227,7 +234,7 @@ body {
 .header-photo__author {
   padding-top: 5px;
   font-size: 13px;
-  color: #acacac;
+  color: @grey-light;
 }
 
 .page-content {
@@ -256,6 +263,16 @@ body {
     flex: auto;
   }
 
+  @media only screen and (min-width: @screen-md) {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  
+  @media only screen and (min-width: @screen-lg) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
   &__item {
     display: inline-block;
     vertical-align: top;
@@ -274,16 +291,6 @@ body {
       padding-right: 10px;
       padding-bottom: 20px;
     }
-  }
-  
-  @media only screen and (min-width: @screen-md) {
-    margin-left: -5px;
-    margin-right: -5px;
-  }
-  
-  @media only screen and (min-width: @screen-lg) {
-    margin-left: -10px;
-    margin-right: -10px;
   }
 }
 
@@ -340,15 +347,19 @@ body {
   height: 80px;
   padding-left: 118px;
   margin: 3px 3px 11px 3px;
-  background-color: #fbf6e8;
+  background-color: @ads-bg;
   background-image: url('./../images/ads.png');
   background-repeat: no-repeat;
+
+  @media only screen and (min-width: @screen-md) {
+    display: none;
+  }
 
   &__description {
     padding-top: 7px;
     font-size: 10px;
     font-weight: 700;
-    color: #bebebe;
+    color: @grey;
   }
 
   &__title {
@@ -362,10 +373,6 @@ body {
     font-size: 12px;
     line-height: 16px;
     padding-top: 3px;
-  }
-  
-  @media only screen and (min-width: @screen-md) {
-    display: none;
   }
 }
 
@@ -431,13 +438,13 @@ footer {
   font-size: 13px;
   color: #000;
 
-  &.active,
-  &:hover {
-    background-color: #e6e6e6;
-  }
-
   &.active {
     font-weight: bold;
+  }
+
+  &.active,
+  &:hover {
+    background-color: @grey-lighter;
   }
 }
 
