@@ -1,7 +1,4 @@
 .css-lock (@property, @from, @to, @fromWidth: @screen-sm, @toWidth: @screen-md) {
-  // y = ax + b
-  // @{property}: @from;
-
   @a: (unit(@from - @to) * unit(@baseFontSize)) / unit(@fromWidth - @toWidth);
 
   @_from: unit(@from);
@@ -20,14 +17,10 @@
 }
 
 .css-lock-px (@property, @from, @to, @fromWidth: @screen-sm, @toWidth: @screen-md) {
-  // y = ax + b
-  // @{property}: @from;
-
   @a: unit(@from - @to) / unit(@fromWidth - @toWidth);
 
   @_from: unit(@from);
   @_fromWidth: unit(@fromWidth);
-  // @_baseFontSize: unit(@baseFontSize);
 
   @b: ~"@{_from} * 1px - @{a} * @{_fromWidth} * 1px";
 
@@ -46,8 +39,8 @@
   justify-content: center;
   align-items: center;
 
-  &>span {
-    font-family: 'Noto Serif', serif;
+  & > span {
+    font-family: @font-noto-serif;
   }
 
   &__day {

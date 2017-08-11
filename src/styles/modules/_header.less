@@ -1,3 +1,16 @@
+.header {
+  height: 268px;
+  overflow: hidden;
+
+  @media only screen and (min-width: @screen-md) {
+    height: 393px;
+  }
+
+  @media only screen and (min-width: @screen-lg) {
+    height: 606px;
+  }
+}
+
 .header-title-wrapper {
   height: 66px;
   .css-lock-px(height, 66px, 107px, @screen-sm, @screen-md);
@@ -20,7 +33,7 @@
   line-height: 100%;
   font-size: 1.625rem;
   .css-lock(font-size, 1.625rem, 2.5rem, @screen-sm, @screen-md);
-  font-family: 'Playfair Display', serif;
+  font-family: @font-playfair-display;
   font-weight: 400;
   text-transform: uppercase;
 

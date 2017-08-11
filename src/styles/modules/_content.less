@@ -39,8 +39,11 @@
   .css-lock-px(height, 53px, 104px, @screen-md, @screen-lg);
 }
 
-.photo-card > img {
-  width: 100%;
+.photo-card {
+  overflow: hidden;
+  & > img {
+    width: 100%;
+  }
 }
 
 .date-card {
@@ -50,8 +53,8 @@
   &:after {
     content: '';
     position: absolute;
-    right: 9.6%; //7px;
-    bottom: 58.3%; //28px;
+    right: 9.6%;
+    bottom: 58.3%;
     display: block;
     width: 0;
     height: 0;
@@ -61,13 +64,13 @@
     border-right: 0;
     
     @media only screen and (min-width: @screen-md) {
-      right: 11.25%; // 9px;
-      bottom: 62.26%; // 33px;
+      right: 11.25%;
+      bottom: 62.26%;
     }
     
     @media only screen and (min-width: @screen-lg) {
-      right: 12.5%; // 20px;
-      bottom: 61.5%; // 64px;
+      right: 12.5%;
+      bottom: 61.5%;
     }
   }
 }
