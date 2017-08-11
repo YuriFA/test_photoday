@@ -1,6 +1,7 @@
 .header-title-wrapper {
-  position: relative;
   height: 66px;
+  .css-lock-px(height, 66px, 107px, @screen-sm, @screen-md);
+  .css-lock-px(height, 107px, 104px, @screen-md, @screen-lg);
 
   @media only screen and (min-width: @screen-md) {
     height: 107px;
@@ -12,29 +13,32 @@
 }
 
 .header-title {
+  position: relative;
   padding-top: 23px;
-  line-height: 26px;
-  // font-size: 26px;
+  .css-lock-px(padding-top, 23px, 39px, @screen-sm, @screen-md);
+  .css-lock-px(padding-top, 39px, 37px, @screen-md, @screen-lg);
+  line-height: 100%;
+  font-size: 1.625rem;
+  .css-lock(font-size, 1.625rem, 2.5rem, @screen-sm, @screen-md);
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   text-transform: uppercase;
-  .css-lock(font-size, 1.625rem, 2.5rem, @screen-sm, @screen-md);
 
   &:after {
     content: '';
     position: absolute;
-    // top: 44px;
     right: 0;
-    // left: 191px;
+    bottom: 3px;
+    // .css-lock(bottom, 3px, 2px, @screen-sm, @screen-md);
     display: block;
-    .css-lock(bottom, 1.25rem, 1.875rem, @screen-sm, @screen-md);
-    .css-lock(width, 7.4375rem, 9.8125rem, @screen-sm, @screen-md);
+    width: 119px;
+    .css-lock-px(width, 119px, 157px, @screen-sm, @screen-md);
+    .css-lock-px(width, 157px, 420px, @screen-md, @screen-lg);
     height: 2px;
     background-color: #000;
 
     // @media only screen and (min-width: @screen-md) {
-    //   top: 75px;
-    //   left: 283px;
+    //   bottom: 2px;
     // }
     
     // @media only screen and (min-width: @screen-lg) {
@@ -44,13 +48,13 @@
   }
 
   @media only screen and (min-width: @screen-md) {
-    padding-top: 39px;
+    // padding-top: 39px;
     // font-size: 40px;
-    line-height: 40px;
+    // line-height: 40px;
   }
   
   @media only screen and (min-width: @screen-lg) {
-    padding-top: 37px;
+    // padding-top: 37px;
   }
 }
 
@@ -58,7 +62,7 @@
   position: relative;
 
   &__image {
-    &>img {
+    & > img {
       width: 100%;
       height: auto;
     }
@@ -71,6 +75,8 @@
   left: 6px;
   width: 80px;
   height: 53px;
+  .css-lock-px(width, 80px, 160px, @screen-md, @screen-lg);
+  .css-lock-px(height, 53px, 104px, @screen-md, @screen-lg);
   background: rgba(255,255,255, 0.8);
   .date-card-mixin();
 
@@ -98,8 +104,8 @@
   @media only screen and (min-width: @screen-lg) {
     top: 20px;
     left: 20px;
-    width: 160px;
-    height: 104px;
+    // width: 160px;
+    // height: 104px;
   }
 }
 
@@ -114,12 +120,12 @@
 
 .header-photo__description {
   padding-top: 15px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: bold;
 }
 
 .header-photo__author {
   padding-top: 5px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: @grey-light;
 }

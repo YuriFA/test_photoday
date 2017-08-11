@@ -1,14 +1,19 @@
 footer {
   padding-top: 14px;
+  .css-lock-px(padding-top, 14px, 19px, @screen-sm, @screen-md);
+  .css-lock-px(padding-top, 19px, 12px, @screen-md, @screen-lg);
   padding-bottom: 19px;
+  .css-lock-px(padding-bottom, 19px, 28px, @screen-sm, @screen-md);
+  .css-lock-px(padding-bottom, 28px, 23px, @screen-md, @screen-lg);
 
   @media only screen and (min-width: @screen-md) {
-    padding-top: 19px;
-    padding-bottom: 28px;
+    // padding-top: 19px;
+    // padding-bottom: 28px;
   }
   
   @media only screen and (min-width: @screen-lg) {
-    padding-top: 12px;
+    // padding-top: 12px;
+    // padding-bottom: 23px;
   }
 }
 
@@ -33,7 +38,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #000;
 
   &.active {
@@ -48,18 +53,19 @@ footer {
 
 .pagination-item__next {
   margin-left: 21px;
-  font-size: 13px;
+  .css-lock-px(margin-left, 21px, 13px, @screen-sm, @screen-md);
+  font-size: 0.8125rem;
   color: #000;
 
   @media only screen and (min-width: @screen-md) {
-    margin-left: 13px;
+    // margin-left: 13px;
   }
 }
 
 .pagination-description {
   display: inline-block;
   padding-right: 22px;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .mobile-hidden {

@@ -1,6 +1,6 @@
 .css-lock (@property, @from, @to, @fromWidth: @screen-sm, @toWidth: @screen-md) {
   // y = ax + b
-  @{property}: @from;
+  // @{property}: @from;
 
   @a: (unit(@from - @to) * unit(@baseFontSize)) / unit(@fromWidth - @toWidth);
 
@@ -9,6 +9,27 @@
   @_baseFontSize: unit(@baseFontSize);
 
   @b: ~"@{_from} * @{_baseFontSize} * 1px - @{a} * @{_fromWidth} * 1px";
+
+  @media (min-width: @fromWidth) {
+    @{property}: calc(~"calc(@{a} * 100vw + @{b})");
+  }
+
+  @media (min-width: @toWidth) {
+    @{property}: @to;
+  }
+}
+
+.css-lock-px (@property, @from, @to, @fromWidth: @screen-sm, @toWidth: @screen-md) {
+  // y = ax + b
+  // @{property}: @from;
+
+  @a: unit(@from - @to) / unit(@fromWidth - @toWidth);
+
+  @_from: unit(@from);
+  @_fromWidth: unit(@fromWidth);
+  // @_baseFontSize: unit(@baseFontSize);
+
+  @b: ~"@{_from} * 1px - @{a} * @{_fromWidth} * 1px";
 
   @media (min-width: @fromWidth) {
     @{property}: calc(~"calc(@{a} * 100vw + @{b})");
@@ -30,22 +51,24 @@
   }
 
   &__day {
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125rem;
+    .css-lock(font-size, 1.125rem, 2.25rem, @screen-md, @screen-lg);
+    line-height: 1.3125rem;
 
     @media only screen and (min-width: @screen-lg) {
-      font-size: 36px;
-      line-height: 36px;
+      // font-size: 2.25rem;
+      line-height: 2.25rem;
     }
   }
 
   &__month {
-    font-size: 14px;  
-    line-height: 18px;
+    font-size: 0.875rem;  
+    .css-lock(font-size, 0.875rem, 1.125rem, @screen-md, @screen-lg);
+    line-height: 1.125rem;
 
     @media only screen and (min-width: @screen-lg) {
-      font-size: 18px;
-      line-height: 26px;
+      // font-size: 1.125rem;
+      line-height: 1.625rem;
     }
   }
 }

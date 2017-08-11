@@ -1,48 +1,61 @@
 .page-content {
   padding-top: 5px;
+  .css-lock-px(padding-top, 5px, 10px, @screen-sm, @screen-md);
+  .css-lock-px(padding-top, 10px, 17px, @screen-md, @screen-lg);
 
   @media only screen and (min-width: @screen-md) {
-    padding-top: 10px;
+    // padding-top: 10px;
   }
   
   @media only screen and (min-width: @screen-lg) {
-    padding-top: 17px;
+    // padding-top: 17px;
   }
 }
 
 .photos-grid {
   position: relative;
   margin-left: -3px;
+  .css-lock-px(margin-left, -3px, -5px, @screen-sm, @screen-md);
+  .css-lock-px(margin-left, -5px, -10px, @screen-md, @screen-lg);
   margin-right: -3px;
+  .css-lock-px(margin-right, -3px, -5px, @screen-sm, @screen-md);
+  .css-lock-px(margin-right, -5px, -10px, @screen-md, @screen-lg);
   font-size: 0;
+  overflow: hidden;
 
   @media only screen and (min-width: @screen-md) {
-    margin-left: -5px;
-    margin-right: -5px;
+    // margin-left: -5px;
+    // margin-right: -5px;
   }
   
   @media only screen and (min-width: @screen-lg) {
-    margin-left: -10px;
-    margin-right: -10px;
+    // margin-left: -10px;
+    // margin-right: -10px;
   }
 
   &__item {
     display: inline-block;
     vertical-align: top;
     padding-left: 3px;
+    .css-lock-px(padding-left, 3px, 5px, @screen-sm, @screen-md);
+    .css-lock-px(padding-left, 5px, 10px, @screen-md, @screen-lg);
     padding-right: 3px;
+    .css-lock-px(padding-right, 3px, 5px, @screen-sm, @screen-md);
+    .css-lock-px(padding-right, 5px, 10px, @screen-md, @screen-lg);
     padding-bottom: 6px;
+    .css-lock-px(padding-bottom, 6px, 10px, @screen-sm, @screen-md);
+    .css-lock-px(padding-bottom, 10px, 20px, @screen-md, @screen-lg);
 
     @media only screen and (min-width: @screen-md) {
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-bottom: 10px;
+      // padding-left: 5px;
+      // padding-right: 5px;
+      // padding-bottom: 10px;
     }
     
     @media only screen and (min-width: @screen-lg) {
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 20px;
+      // padding-left: 10px;
+      // padding-right: 10px;
+      // padding-bottom: 20px;
     }
   }
 }
@@ -50,16 +63,20 @@
 .photo-card,
 .date-card {
   width: 73px;
+  .css-lock-px(width, 73px, 80px, @screen-sm, @screen-md);
+  .css-lock-px(width, 80px, 160px, @screen-md, @screen-lg);
   height: 48px;
+  .css-lock-px(height, 48px, 53px, @screen-sm, @screen-md);
+  .css-lock-px(height, 53px, 104px, @screen-md, @screen-lg);
 
   @media only screen and (min-width: @screen-md) {
-    width: 80px;
-    height: 53px;
+    // width: 80px;
+    // height: 53px;
   }
   
   @media only screen and (min-width: @screen-lg) {
-    width: 160px;
-    height: 104px;
+    // width: 160px;
+    // height: 104px;
   }
 }
 
@@ -102,7 +119,7 @@
   padding-left: 118px;
   margin: 3px 3px 11px 3px;
   background-color: @ads-bg;
-  background-image: url('./../images/ads.png');
+  background-image: url('./../images/sellout.png');
   background-repeat: no-repeat;
 
   @media only screen and (min-width: @screen-md) {
@@ -111,21 +128,21 @@
 
   &__description {
     padding-top: 7px;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 700;
     color: @grey;
   }
 
   &__title {
     padding-top: 5px;
-    line-height: 16px;
-    font-size: 13px;
+    line-height: 1rem;
+    font-size: 0.8125rem;
     font-weight: 700;
   }
 
   &__content {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.75rem;
+    line-height: 1rem;
     padding-top: 3px;
   }
 }
@@ -134,14 +151,15 @@
   display: none;
   
   &__adidas {
+    .css-lock-px(padding-right, 5px, 10px, @screen-md, @screen-lg);
     @media only screen and (min-width: @screen-md) {
       float: right;
       display: block;
-      padding-right: 5px;
+      // padding-right: 5px;
     }
     
     @media only screen and (min-width: @screen-lg) {
-      padding-right: 10px;
+      // padding-right: 10px;
     }
   }
   
