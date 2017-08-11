@@ -1,0 +1,125 @@
+.header-title-wrapper {
+  position: relative;
+  height: 66px;
+
+  @media only screen and (min-width: @screen-md) {
+    height: 107px;
+  }
+
+  @media only screen and (min-width: @screen-lg) {
+    height: 104px;
+  }
+}
+
+.header-title {
+  padding-top: 23px;
+  line-height: 26px;
+  // font-size: 26px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  .css-lock(font-size, 1.625rem, 2.5rem, @screen-sm, @screen-md);
+
+  &:after {
+    content: '';
+    position: absolute;
+    // top: 44px;
+    right: 0;
+    // left: 191px;
+    display: block;
+    .css-lock(bottom, 1.25rem, 1.875rem, @screen-sm, @screen-md);
+    .css-lock(width, 7.4375rem, 9.8125rem, @screen-sm, @screen-md);
+    height: 2px;
+    background-color: #000;
+
+    // @media only screen and (min-width: @screen-md) {
+    //   top: 75px;
+    //   left: 283px;
+    // }
+    
+    // @media only screen and (min-width: @screen-lg) {
+    //   top: 72px;
+    //   left: 280px;
+    // }
+  }
+
+  @media only screen and (min-width: @screen-md) {
+    padding-top: 39px;
+    // font-size: 40px;
+    line-height: 40px;
+  }
+  
+  @media only screen and (min-width: @screen-lg) {
+    padding-top: 37px;
+  }
+}
+
+.header-photo {
+  position: relative;
+
+  &__image {
+    &>img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.header-photo-date {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 80px;
+  height: 53px;
+  background: rgba(255,255,255, 0.8);
+  .date-card-mixin();
+
+  &:after {
+    @media only screen and (min-width: @screen-lg) {
+      content: '';
+      position: absolute;
+      right: 20px;
+      bottom: 64px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 3px solid #000;
+      border-top: 2.5px solid transparent;
+      border-bottom: 2.5px solid transparent;
+      border-right: 0;
+    }
+  }
+
+  @media only screen and (min-width: @screen-md) {
+    top: 10px;
+    left: 10px;
+  }
+  
+  @media only screen and (min-width: @screen-lg) {
+    top: 20px;
+    left: 20px;
+    width: 160px;
+    height: 104px;
+  }
+}
+
+.header-photo__description-wrapper {
+  display: none;
+
+  @media only screen and (min-width: @screen-lg) {
+    display: block;
+
+  }
+}
+
+.header-photo__description {
+  padding-top: 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.header-photo__author {
+  padding-top: 5px;
+  font-size: 13px;
+  color: @grey-light;
+}

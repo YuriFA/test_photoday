@@ -1,0 +1,51 @@
+.css-lock (@property, @from, @to, @fromWidth: @screen-sm, @toWidth: @screen-md) {
+  // y = ax + b
+  @{property}: @from;
+
+  @a: (unit(@from - @to) * unit(@baseFontSize)) / unit(@fromWidth - @toWidth);
+
+  @_from: unit(@from);
+  @_fromWidth: unit(@fromWidth);
+  @_baseFontSize: unit(@baseFontSize);
+
+  @b: ~"@{_from} * @{_baseFontSize} * 1px - @{a} * @{_fromWidth} * 1px";
+
+  @media (min-width: @fromWidth) {
+    @{property}: calc(~"calc(@{a} * 100vw + @{b})");
+  }
+
+  @media (min-width: @toWidth) {
+    @{property}: @to;
+  }
+}
+
+.date-card-mixin() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &>span {
+    font-family: 'Noto Serif', serif;
+  }
+
+  &__day {
+    font-size: 18px;
+    line-height: 21px;
+
+    @media only screen and (min-width: @screen-lg) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+
+  &__month {
+    font-size: 14px;  
+    line-height: 18px;
+
+    @media only screen and (min-width: @screen-lg) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

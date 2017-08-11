@@ -7,7 +7,7 @@ import rename from 'gulp-rename';
 import paths from '../paths';
 
 gulp.task('styles', () => {
-  gulp.src(`${paths.src.styles}/**/*.less`)
+  gulp.src(`${paths.src.styles}/main.less`)
     .pipe(less())
     .pipe(concat('main.css'))
     .pipe(prefix({

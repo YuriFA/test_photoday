@@ -1,0 +1,155 @@
+.page-content {
+  padding-top: 5px;
+
+  @media only screen and (min-width: @screen-md) {
+    padding-top: 10px;
+  }
+  
+  @media only screen and (min-width: @screen-lg) {
+    padding-top: 17px;
+  }
+}
+
+.photos-grid {
+  position: relative;
+  margin-left: -3px;
+  margin-right: -3px;
+  font-size: 0;
+
+  @media only screen and (min-width: @screen-md) {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  
+  @media only screen and (min-width: @screen-lg) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 6px;
+
+    @media only screen and (min-width: @screen-md) {
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 10px;
+    }
+    
+    @media only screen and (min-width: @screen-lg) {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.photo-card,
+.date-card {
+  width: 73px;
+  height: 48px;
+
+  @media only screen and (min-width: @screen-md) {
+    width: 80px;
+    height: 53px;
+  }
+  
+  @media only screen and (min-width: @screen-lg) {
+    width: 160px;
+    height: 104px;
+  }
+}
+
+.photo-card > img {
+  width: 100%;
+}
+
+.date-card {
+  position: relative;
+  .date-card-mixin();
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 7px;
+    bottom: 28px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 3px solid #000;
+    border-top: 2.5px solid transparent;
+    border-bottom: 2.5px solid transparent;
+    border-right: 0;
+    
+    @media only screen and (min-width: @screen-md) {
+      right: 9px;
+      bottom: 33px;
+    }
+    
+    @media only screen and (min-width: @screen-lg) {
+      right: 20px;
+      bottom: 64px;
+    }
+  }
+}
+
+.ads {
+  width: 100%;
+  height: 80px;
+  padding-left: 118px;
+  margin: 3px 3px 11px 3px;
+  background-color: @ads-bg;
+  background-image: url('./../images/ads.png');
+  background-repeat: no-repeat;
+
+  @media only screen and (min-width: @screen-md) {
+    display: none;
+  }
+
+  &__description {
+    padding-top: 7px;
+    font-size: 10px;
+    font-weight: 700;
+    color: @grey;
+  }
+
+  &__title {
+    padding-top: 5px;
+    line-height: 16px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  &__content {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 3px;
+  }
+}
+
+.additional-content {
+  display: none;
+  
+  &__adidas {
+    @media only screen and (min-width: @screen-md) {
+      float: right;
+      display: block;
+      padding-right: 5px;
+    }
+    
+    @media only screen and (min-width: @screen-lg) {
+      padding-right: 10px;
+    }
+  }
+  
+  &__cola {
+    @media only screen and (min-width: @screen-lg) {
+      float: right;
+      display: block;
+      padding-right: 10px;
+    }
+  }
+}
