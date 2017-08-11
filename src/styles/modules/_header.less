@@ -24,18 +24,24 @@
   font-weight: 400;
   text-transform: uppercase;
 
+  & > span {
+    position: relative;
+    padding-right: 18px;
+    .css-lock-px(padding-right, 18px, 17px, @screen-sm, @screen-md);
+    .css-lock-px(padding-right, 17px, 14px, @screen-md, @screen-lg);
+    background-color: #fff;
+    z-index: 1;
+  }
+
   &:after {
     content: '';
     position: absolute;
-    right: 0;
-    bottom: 3px;
-    // .css-lock(bottom, 3px, 2px, @screen-sm, @screen-md);
+    bottom: 2px;
     display: block;
-    width: 119px;
-    .css-lock-px(width, 119px, 157px, @screen-sm, @screen-md);
-    .css-lock-px(width, 157px, 420px, @screen-md, @screen-lg);
+    width: 100%;
     height: 2px;
     background-color: #000;
+    z-index: 0;
   }
 }
 

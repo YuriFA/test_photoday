@@ -6,10 +6,12 @@
 
 .photos-grid {
   position: relative;
-  margin-left: -3px;
+  margin-left: -3px; //-0.95%
+  // margin-left: -0.95%;
   .css-lock-px(margin-left, -3px, -5px, @screen-sm, @screen-md);
   .css-lock-px(margin-left, -5px, -10px, @screen-md, @screen-lg);
   margin-right: -3px;
+  // margin-right: -0.95%;
   .css-lock-px(margin-right, -3px, -5px, @screen-sm, @screen-md);
   .css-lock-px(margin-right, -5px, -10px, @screen-md, @screen-lg);
   font-size: 0;
@@ -17,11 +19,14 @@
 
   &__item {
     display: inline-block;
+    // width: 25%;
     vertical-align: top;
-    padding-left: 3px;
+    padding-left: 3px; // 0.95%
+    // padding-left: 0.95%;
     .css-lock-px(padding-left, 3px, 5px, @screen-sm, @screen-md);
     .css-lock-px(padding-left, 5px, 10px, @screen-md, @screen-lg);
     padding-right: 3px;
+    // padding-right: 0.95%;
     .css-lock-px(padding-right, 3px, 5px, @screen-sm, @screen-md);
     .css-lock-px(padding-right, 5px, 10px, @screen-md, @screen-lg);
     padding-bottom: 6px;
@@ -30,9 +35,8 @@
   }
 }
 
-.photo-card,
-.date-card {
-  width: 73px;
+.card {
+  width: 73px; //25%
   .css-lock-px(width, 73px, 80px, @screen-sm, @screen-md);
   .css-lock-px(width, 80px, 160px, @screen-md, @screen-lg);
   height: 48px;
@@ -51,8 +55,8 @@
   &:after {
     content: '';
     position: absolute;
-    right: 7px;
-    bottom: 28px;
+    right: 9.6%; //7px;
+    bottom: 58.3%; //28px;
     display: block;
     width: 0;
     height: 0;
@@ -62,13 +66,13 @@
     border-right: 0;
     
     @media only screen and (min-width: @screen-md) {
-      right: 9px;
-      bottom: 33px;
+      right: 11.25%; // 9px;
+      bottom: 62.26%; // 33px;
     }
     
     @media only screen and (min-width: @screen-lg) {
-      right: 20px;
-      bottom: 64px;
+      right: 12.5%; // 20px;
+      bottom: 61.5%; // 64px;
     }
   }
 }
@@ -109,20 +113,20 @@
 
 .additional-content {
   display: none;
-  
-  &__adidas {
-    .css-lock-px(padding-right, 5px, 10px, @screen-md, @screen-lg);
-    @media only screen and (min-width: @screen-md) {
-      float: right;
-      display: block;
-    }
+}
+
+.additional-content-adidas {
+  .css-lock-px(padding-right, 5px, 10px, @screen-md, @screen-lg);
+  @media only screen and (min-width: @screen-md) {
+    float: right;
+    display: block;
   }
-  
-  &__cola {
-    @media only screen and (min-width: @screen-lg) {
-      float: right;
-      display: block;
-      padding-right: 10px;
-    }
+}
+
+.additional-content-cola {
+  @media only screen and (min-width: @screen-lg) {
+    float: right;
+    display: block;
+    padding-right: 10px;
   }
 }
